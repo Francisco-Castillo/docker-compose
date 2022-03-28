@@ -1,5 +1,5 @@
 # docker-compose
-Ejecutar 
+## ¿Como ejecutar? 
 
 `docker-compose -f docker-compose.yml up` 
 
