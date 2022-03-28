@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  cloud-config:
+    container_name: cloud-config-app
+    image: cloud-config-app
+    restart: always
+    ports:
+      - '8888:8888'
+    networks:
+      - 'dockernetflix-network'
+
+  registry-service:
+    container_name: registry-service
+    image: registry-service 
+    restart: always
+    ports:
+      - '8761:8761'
+    networks:
+      - 'dockernetflix-network'
+
+  customer-service:
+    container_name: customer-service
+    image: customer-service 
+    restart: always
+    networks:
+      - 'dockernetflix-network'
+  
+  gateway-service:
+    container_name: gateway-service
+    image: gateway-service 
+    restart: always
+    ports:
+      - '8080:8080'
+    networks:
+      - 'dockernetflix-network'
+
+networks:
+  dockernetflix-network: 
